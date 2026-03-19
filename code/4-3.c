@@ -3,17 +3,24 @@
 int main()
 {
     int n;
-    scanf("%d\n", n);
-    if(n%2 == 1){
-        printf("true");
+    int k = 1;
+    scanf("%d", &n);
+    
+    if(n <= 1){
+       k = 0;
+    } else {
+        for(int i = 2; i < n; i++){
+            if(n % i == 0){
+                k = 0;
+                break;
+            } 
+        }
+    }  
+    if (k == 1){
+        printf("true\n");
+    } else {
+        printf("false\n");
     }
-    if(n == 2){
-        printf("true");
-    }
-    else{
-        printf("false");
-    }
-
     return 0;
 }
 
